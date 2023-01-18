@@ -14,3 +14,10 @@ to edit the amount of embeds you want to send you need to edit the range() in th
                          spam_url = requests.post(webhook_url, headers=HEADERS, json = spam_content_req)
 
 be default its set to 10
+
+
+
+
+i wont be updating this because i made this while i was bored and had nothing to do
+
+bye -burnt.chipset
