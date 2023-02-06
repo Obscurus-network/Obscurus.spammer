@@ -4,18 +4,14 @@ Simple discord webhook spammer
 
 to config just edit the following in the file:
 
-               webhook_url = 'webhook_url'
-               embed_desc = 'Description'
-               embed_name = 'Name'
-
-to edit the amount of embeds you want to send you need to edit the range() in this part of code:
-
-                     for x in range(10):
-                         spam_url = requests.post(webhook_url, headers=HEADERS, json = spam_content_req)
-
-be default its set to 10
-
-
+               
+               webhook_url = 'URL_HERE' #url of the webhook
+               webhook_pfp_url =  'URL_HERE' #profile picture that the webhook will have
+               webhook_name = 'NAME_HERE' #name that the webhook will have
+               use_proxy = False
+               embed_desc = 'embed_description'
+               embed_name = 'embed_name'
+               spam_count = int('20') #how much spam
 
 
 i wont be updating this because i made this while i was bored and had nothing to do
