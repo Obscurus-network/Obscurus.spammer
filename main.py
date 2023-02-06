@@ -1,8 +1,12 @@
 import requests
 
-webhook_url = 'webhook_url'
-embed_desc = 'Description'
-embed_name = 'Name'
+webhook_url = 'URL_HERE' #url of the webhook
+webhook_pfp_url =  'URL_HERE' #profile picture that the webhook will have
+webhook_name = 'NAME_HERE' #name that the webhook will have
+use_proxy = False
+embed_desc = 'embed_description'
+embed_name = 'embed_name'
+spam_count = int('20') #how much spam
 
 def menu_ui():
     print(f"""                                
@@ -16,6 +20,7 @@ def menu_ui():
 
     Current Config:
     -webhook url = {webhook_url}
+    -use proxy   = {use_proxy}
     -embed name  = {embed_name}
     -embed desc  = {embed_desc}
 
@@ -25,6 +30,8 @@ menu_ui()
 
 #embed
 spam_content_req = {
+    'username': f"{webhook_name}",
+    'avatar_url': f'{webhook_pfp_url}'
 }
 
 spam_content_req["embeds"] = [
@@ -46,12 +53,12 @@ HEADERS = {'user-agent': ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5)'
 def start_spam():
     #post
     print("starting to spam, press CTRL + C to stop")
-    for x in range(10):
+    for x in range(spam_count):
         spam_url = requests.post(webhook_url, headers=HEADERS, json = spam_content_req)
         if spam_url == '200':
-            print("didnt return 200")
+            print("Embed wasnt sent, maybe rate limited?")
         else:
-            print("returned 200")
+            print("Embed sent succesfully!")
     
 start_spam()
     
