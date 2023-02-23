@@ -53,7 +53,7 @@ def start_spam():
     print("starting to spam, press CTRL + C to stop")
     for x in range(spam_count):
         spam_url = requests.post(webhook_url, headers=HEADERS, json = spam_content_req)
-        if spam_url == '200':
+        if spam_url != '200':
             print("Embed wasnt sent, maybe rate limited?")
         else:
             print("Embed sent succesfully!")
